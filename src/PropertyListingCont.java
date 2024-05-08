@@ -28,11 +28,15 @@ public class PropertyListingCont implements Initializable {
     @FXML
     private VBox propList;
 
+    public void setCustType(String type) {
+      this.custType = type;
+      System.out.println("Cust Type: " + custType);
+    }
+
     public void setCust(String id, String type) {
       custID = id;
       custType = type;
 
-  
       List<PropertyData> list = new ArrayList<PropertyData>();
       
       String queryString = "SELECT * FROM PROPERTY WHERE PROPERTYSTATUS = 'FOR_SALE' OR PROPERTYSTATUS = 'FOR_RENT'";
@@ -46,6 +50,7 @@ public class PropertyListingCont implements Initializable {
       ResultSet results = connection.connect();
       while (results.next()) {
           pd = new PropertyData();
+          pd.setPropID(results.getString(1));
           pd.setPrice(results.getString(4));
           propStatus = results.getString(5);
           pd.setDescription(propStatus);
@@ -66,7 +71,6 @@ public class PropertyListingCont implements Initializable {
           HBox hbox = loader.load();
           SinglePropInfo singlePropInfo = loader.getController();
           singlePropInfo.setCust(custID, custType);
-          System.out.println("Cust ID: " + custID);
           // setting the property data
           singlePropInfo.setPropertyData(list.get(i));
           // adding to the VBox
@@ -79,49 +83,7 @@ public class PropertyListingCont implements Initializable {
 
       @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-    //   List<PropertyData> list = new ArrayList<PropertyData>();
       
-    //   String queryString = "SELECT * FROM PROPERTY WHERE PROPERTYSTATUS = 'FOR_SALE' OR PROPERTYSTATUS = 'FOR_RENT'";
-
-    //   DBConnection connection = new DBConnection(queryString);
-    //   PropertyData pd = new PropertyData();
-
-    //   String propStatus = "";
-
-    // try {
-    //   ResultSet results = connection.connect();
-    //   while (results.next()) {
-    //       pd = new PropertyData();
-    //       pd.setPrice(results.getString(4));
-    //       propStatus = results.getString(5);
-    //       pd.setDescription(propStatus);
-    //       pd.setPropertyType(results.getString(6));
-    //       list.add(pd);
-    //   }
-    // } catch (Exception e) {
-    //   e.printStackTrace();
-    // }
-
-
-    //   for (int i = 0; i < list.size(); i++) {
-    //     FXMLLoader loader = new FXMLLoader();
-
-    //     loader.setLocation(getClass().getResource("singlePropInfo.fxml"));
-    //     SinglePropInfo controller = loader.getController();
-    //     controller.setCust(custID, custType);
-
-    //     try {
-    //       HBox hbox = loader.load();
-    //       SinglePropInfo singlePropInfo = loader.getController();
-    //       // setting the property data
-    //       singlePropInfo.setPropertyData(list.get(i));
-    //       // adding to the VBox
-    //       propList.getChildren().add(hbox);
-    //     } catch (IOException e) {
-    //       e.printStackTrace();
-    //     }
-    //   }
     }
 
     @FXML
@@ -145,6 +107,7 @@ public class PropertyListingCont implements Initializable {
     @FXML
     void switchToPropertiesOwned(ActionEvent event) {
       try {
+        System.out.println("propListing: " + custType);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("OwnerUser.fxml"));
         root = loader.load();
 

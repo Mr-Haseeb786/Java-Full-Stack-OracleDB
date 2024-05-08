@@ -49,7 +49,6 @@ public class SignUpCont {
 
     @FXML
     void signUp(ActionEvent event) {
-      System.out.println("Sign Up" + signUpName.getText());
       System.out.println(signUpEmail.getText().length());
       if (signUpName.getText().isEmpty() || signUpEmail.getText().isEmpty() || phoneNumb.getText().isEmpty() || signUpPass.getText().isEmpty() || ConfrimPass.getText().isEmpty()) {
         toastNoti.setTextFill(Color.RED);
@@ -58,7 +57,7 @@ public class SignUpCont {
         return;
       }
 
-      if (signUpPass.equals(ConfrimPass)) {
+      if (signUpPass.getText().equals(ConfrimPass.getText())) {
 
       // Generating Customer ID
       Integer randomizer = (int) (Math.random() * 10020038);
@@ -72,6 +71,16 @@ public class SignUpCont {
       try {
         connection.connect();
       } catch (Exception e) {
+        e.printStackTrace();
+      }
+
+      try {
+        root = FXMLLoader.load(getClass().getResource("UserLoginPage.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+      } catch (IOException e) {
         e.printStackTrace();
       }
     } else {

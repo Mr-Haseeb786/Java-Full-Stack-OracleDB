@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,10 +11,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import oracle.sql.DATE;
 
 public class TenantUserController implements Initializable{
 
@@ -47,7 +52,7 @@ public class TenantUserController implements Initializable{
 
     if (custType != null) {
 
-      if (custType.equalsIgnoreCase("tenant")) {
+      if (custType.contains("TENANT")) {
         
         String queryString = "SELECT PropertyID, ZIPCode, Price FROM PROPERTY WHERE CUSTOMERID = '" + custID + "'";
         DBConnection connection = new DBConnection(queryString);
@@ -75,6 +80,26 @@ public class TenantUserController implements Initializable{
     @FXML
     void reqMaint(ActionEvent event) {
 
+      String id = propID.substring(0, 3).toUpperCase() + Integer.toString((int)(Math.random() * 200030)) + custID.substring(0, 3).toUpperCase();
+
+      LocalDate date = LocalDate.now();
+
+      String query = "INSERT INTO MAINTENANCE_REQUESTS VALUES ('" + id + "' , TO_DATE('" + date + "', 'yyyy-mm-dd'), '" + maintDesc.getText() + "', 'PENDING', '" + propID  + "', '" + custID + "')";
+      DBConnection connection = new DBConnection(query);
+      try {
+        connection.connect();
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Maintenance Request");
+        alert.setHeaderText(null);
+        alert.setContentText("Request Submitted!");
+        alert.setX(550);
+        alert.setY(300);
+        alert.showAndWait();
+
+        maintDesc.setText("");
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
 
     @FXML

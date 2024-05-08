@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -78,47 +77,33 @@
                   <Font name="Nirmala UI Bold" size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="searchProp" layoutX="70.0" layoutY="159.0" prefHeight="40.0" prefWidth="673.0" promptText="Search">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="TEXT" />
-               </cursor>
-            </TextField>
-            <ScrollPane layoutX="70.0" layoutY="223.0" prefHeight="369.0" prefWidth="675.0" style="-fx-background-color: transparent;">
+            <ScrollPane hbarPolicy="NEVER" layoutX="64.0" layoutY="223.0" prefHeight="350.0" prefWidth="678.0" style="-fx-background-color: F3E9DC;" vbarPolicy="ALWAYS">
                <content>
-                  <VBox fx:id="propList" prefHeight="364.0" prefWidth="672.0" spacing="10.0" style="-fx-background-color: F3E9DC;">
-                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="672.0" spacing="10.0">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="141.0" text="Property Type">
-                                 <font>
-                                    <Font name="Nirmala UI Bold" size="17.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" prefHeight="26.0" prefWidth="83.0" text="Price (Rs.)">
-                                 <font>
-                                    <Font name="Nirmala UI Bold" size="17.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="26.0" prefWidth="135.0" text="Description" textFill="#4a3728">
-                                 <font>
-                                    <Font name="Nirmala UI Bold" size="17.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  <VBox fx:id="propList" prefHeight="346.0" prefWidth="661.0" spacing="10.0" style="-fx-background-color: F3E9DC;" />
                </content>
             </ScrollPane>
+            <HBox alignment="CENTER_LEFT" layoutX="64.0" layoutY="181.0" prefHeight="36.0" prefWidth="672.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="141.0" text="Property Type">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="83.0" text="Price (Rs.)">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="26.0" prefWidth="135.0" text="Description" textFill="#4a3728">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
    </right>

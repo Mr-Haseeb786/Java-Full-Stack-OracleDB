@@ -3,7 +3,14 @@ public class PropertyData {
   private String propertyType;
   private String price; 
   private String description;
+  private String propID;
 
+  public String getPropID() {
+    return propID;
+  }
+  public void setPropID(String propID) {
+    this.propID = propID;
+  }
   public void setPropertyType(String propertyType) {
     this.propertyType = propertyType;
   }

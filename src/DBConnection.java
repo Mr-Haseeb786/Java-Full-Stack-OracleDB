@@ -19,8 +19,6 @@ public class DBConnection {
         ResultSet resultSet = null;
 
         try {
-            // Load the Oracle JDBC driver
-            // Class.forName("oracle.jdbc.driver.OracleDriver");
 
             // Establish a connection
             Connection connection = DriverManager.getConnection(url, username, password);
@@ -28,13 +26,6 @@ public class DBConnection {
 
             // Execute a query
             resultSet = statement.executeQuery(queryString);
-
-            // Process the ResultSet
-            // while (resultSet.next()) {
-            //   for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
-            //     System.out.print(resultSet.getString(i)+ " ");
-            //   }
-            // }       
         } catch (Exception e) {
             System.out.println("Oracle JDBC Driver not found.");
             e.printStackTrace();
