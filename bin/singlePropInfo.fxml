@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="70.0" prefWidth="672.0" style="-fx-background-color: #f3dedc; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SinglePropInfo">
+   <children>
+      <Label fx:id="propType" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="120.0" text="Land" textFill="#c1835c">
+         <font>
+            <Font name="Nirmala UI Bold" size="17.0" />
+         </font>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="propPrice" alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="135.0" text="298,000" textFill="#c1835c">
+         <font>
+            <Font name="Nirmala UI Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="propDesc" contentDisplay="CENTER" prefHeight="70.0" prefWidth="262.0" style="-fx-wrap-text: true;" text="This is a house, with 3 bedrooms and 1 floor, It has a lawn in front of it too It is the perfect house for a small family with 2 children" wrapText="true">
+         <font>
+            <Font name="SansSerif Italic" size="12.0" />
+         </font>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets left="2.0" right="2.0" />
+         </padding>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="152.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#buyProperty" prefHeight="35.0" prefWidth="59.0" styleClass="listingBtn" stylesheets="@styles.css" text="Buy">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Corbel Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#rentProperty" prefHeight="35.0" prefWidth="57.0" styleClass="listingBtn" stylesheets="@styles.css" text="Rent">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Corbel Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</HBox>

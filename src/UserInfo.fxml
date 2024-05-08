@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInfoController">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="241.0" style="-fx-background-color: DAB49D;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="20.0" prefHeight="35.0" prefWidth="144.0" text="Navigation" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="-1.0" layoutY="97.0" mnemonicParsing="false" onAction="#switchToPropertiesOwned" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="Properties Owned" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-2.0" layoutY="162.0" mnemonicParsing="false" onAction="#switchToRentalInfo" prefHeight="52.0" prefWidth="243.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="Rental Information" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToPropertyList" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="Property Listings" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="294.0" mnemonicParsing="false" onAction="#switchToUserInfo" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15; -fx-background-color: #c1835c;" text="User Info" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-2.0" layoutY="483.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="209.0" style="-fx-background-color: #4a3728; -fx-background-radius: 0 10 10 0;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="100.0" layoutX="121.0" layoutY="156.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="119.0" layoutY="223.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="123.0" layoutY="289.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="121.0" layoutY="353.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="121.0" layoutY="91.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="651.0" prefWidth="783.0" style="-fx-background-color: F3E9DC;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="60.0" layoutY="64.0" text="Hi, ">
+               <font>
+                  <Font name="Nirmala UI Bold" size="26.0" />
+               </font>
+            </Label>
+            <Line endX="230.33334350585938" endY="1.52587890625E-5" layoutX="229.0" layoutY="180.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Line endX="232.33334350585938" endY="1.52587890625E-5" layoutX="229.0" layoutY="228.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Label fx:id="userNameLabel" layoutX="99.0" layoutY="64.0" text="User">
+               <font>
+                  <Font name="Nirmala UI Bold" size="26.0" />
+               </font>
+            </Label>
+            <Line endX="230.66665649414062" layoutX="230.0" layoutY="274.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <HBox alignment="CENTER_LEFT" layoutX="74.0" layoutY="139.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="389.0">
+               <children>
+                  <Label text="Email:">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="27.0" prefWidth="185.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="userEmailLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" text="\@" textAlignment="RIGHT" HBox.hgrow="SOMETIMES">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="75.0" layoutY="190.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="387.0">
+               <children>
+                  <Label text="ID:">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="27.0" prefWidth="81.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="userIDLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="0" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="75.0" layoutY="238.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="389.0">
+               <children>
+                  <Label text="Phone:">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="27.0" prefWidth="81.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="phoneNumber" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="0" textAlignment="RIGHT">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

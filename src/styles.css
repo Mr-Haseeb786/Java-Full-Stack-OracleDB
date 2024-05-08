@@ -1,0 +1,24 @@
+.navMenuHover {
+  -fx-background-color: transparent;
+}
+
+.navMenuHover:hover {
+  -fx-background-color: #c1835c;
+}
+
+.signUpBtn:hover {
+  -fx-border-color: purple;
+}
+
+.listingBtn {
+  -fx-background-color: transparent;
+  -fx-border-color: purple;
+  -fx-border-radius: 6;
+  -fx-background-radius: 6;
+}
+
+.listingBtn:hover {
+  -fx-border-color: transparent;
+  -fx-text-fill: white;
+  -fx-background-color: purple;
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OwnerUserController">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="241.0" style="-fx-background-color: DAB49D;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="20.0" prefHeight="35.0" prefWidth="144.0" text="Navigation" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="propOwned" layoutX="-1.0" layoutY="97.0" mnemonicParsing="false" onAction="#switchToPropertiesOwned" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15; -fx-background-color: #c1835c;" stylesheets="@styles.css" text="Properties Owned" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-2.0" layoutY="162.0" mnemonicParsing="false" onAction="#switchToRentalInfo" prefHeight="52.0" prefWidth="243.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="Rental Information" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToPropertyList" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="Property Listings" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="294.0" mnemonicParsing="false" onAction="#switchToUserInfo" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="User Info" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-2.0" layoutY="483.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="209.0" style="-fx-background-color: #4a3728; -fx-background-radius: 0 10 10 0;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="100.0" layoutX="121.0" layoutY="156.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="119.0" layoutY="223.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="123.0" layoutY="289.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="121.0" layoutY="353.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="121.0" layoutY="91.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="651.0" prefWidth="783.0" style="-fx-background-color: F3E9DC;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="76.0" layoutY="90.0" text="Income:">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="142.0" text="No. of Assets:">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="76.0" layoutY="193.0" text="On Rent:">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Pane layoutX="469.0" layoutY="324.0" prefHeight="200.0" prefWidth="249.0" style="-fx-background-color: #d8bfd8; -fx-background-radius: 0 25 0 25;">
+               <children>
+                  <Label layoutX="76.0" layoutY="17.0" text="Total Income" textFill="WHITE">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="104.0" text="Rs." textFill="WHITE">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalIncomeLabel" layoutX="78.0" layoutY="91.0" text="987123" textFill="#a77839">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="77.0" layoutY="246.0" text="Expenses:">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="266.0" layoutY="92.0" text="Rs. ">
+               <font>
+                  <Font name="Nirmala UI Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="incomeLabel" layoutX="296.0" layoutY="87.0" text="45671" textAlignment="RIGHT">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="assestsNoLabel" layoutX="313.0" layoutY="142.0" text="2">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="onRentLabel" layoutX="313.0" layoutY="194.0" text="0">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="expensesLabel" layoutX="301.0" layoutY="246.0" text="2098">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Line endX="112.99996948242188" layoutX="229.0" layoutY="130.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Line endX="112.99996948242188" layoutX="229.0" layoutY="180.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Line endX="112.99996948242188" layoutX="229.0" layoutY="230.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Line endX="112.99996948242188" layoutX="229.0" layoutY="283.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Label layoutX="266.0" layoutY="251.0" text="Rs. ">
+               <font>
+                  <Font name="Nirmala UI Bold" size="13.0" />
+               </font>
+            </Label>
+            <Pane fx:id="noPropOwned" layoutX="37.0" layoutY="24.0" prefHeight="548.0" prefWidth="719.0" style="-fx-background-color: #F3E9DC;">
+               <children>
+                  <Label layoutX="260.0" layoutY="250.0" prefHeight="48.0" prefWidth="208.0" text="No Property Owned!">
+                     <font>
+                        <Font name="Corbel Bold Italic" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

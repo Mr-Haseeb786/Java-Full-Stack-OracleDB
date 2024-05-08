@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TenantUserController">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="241.0" style="-fx-background-color: DAB49D;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="12.0" layoutY="20.0" prefHeight="35.0" prefWidth="218.0" text="Rental Information" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="-1.0" layoutY="97.0" mnemonicParsing="false" onAction="#switchToPropertiesOwned" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="Properties Owned" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-2.0" layoutY="162.0" mnemonicParsing="false" onAction="#switchToRentalInfo" prefHeight="52.0" prefWidth="243.0" style="-fx-background-radius: 0 15 0 15; -fx-background-color: #c1835c;" text="Rental Information" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToPropertyList" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="Property Listings" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="294.0" mnemonicParsing="false" onAction="#switchToUserInfo" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15;" styleClass="navMenuHover" stylesheets="@styles.css" text="User Info" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-2.0" layoutY="483.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="209.0" style="-fx-background-color: #4a3728; -fx-background-radius: 0 10 10 0;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="100.0" layoutX="121.0" layoutY="156.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="119.0" layoutY="223.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="123.0" layoutY="289.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="121.0" layoutY="353.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="121.0" layoutY="91.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="651.0" prefWidth="783.0" style="-fx-background-color: F3E9DC;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="74.0" layoutY="142.0" text="Property ID:">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="76.0" layoutY="193.0" text="ZIP Code:">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="266.0" layoutY="92.0" text="Rs. ">
+               <font>
+                  <Font name="Nirmala UI Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="rentLabel" layoutX="296.0" layoutY="87.0" text="45671" textAlignment="RIGHT">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="propIDLabel" layoutX="313.0" layoutY="142.0" text="2">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="zipLabel" layoutX="313.0" layoutY="194.0" text="0">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Line endX="112.99996948242188" layoutX="229.0" layoutY="130.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Line endX="112.99996948242188" layoutX="229.0" layoutY="180.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Line endX="112.99996948242188" layoutX="229.0" layoutY="230.0" opacity="0.5" startX="-151.00003051757812" style="-fx-stroke: C1835C;" />
+            <Pane layoutX="69.0" layoutY="279.0" prefHeight="131.0" prefWidth="473.0" style="-fx-background-color: lightblue; -fx-background-radius: 0 20 0 20;">
+               <children>
+                  <Label layoutX="167.0" layoutY="7.0" text="Request Maintenance" textFill="WHITE">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="65.0" text="Short Description:" textFill="#f3e9dc">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="maintDesc" layoutX="160.0" layoutY="56.0" prefHeight="38.0" prefWidth="194.0" />
+                  <Button layoutX="382.0" layoutY="61.0" mnemonicParsing="false" onAction="#reqMaint" prefHeight="30.0" prefWidth="67.0" style="-fx-background-color: transparent; -fx-border-color: DAB49D; -fx-background-radius: 6; -fx-border-radius: 6;" text="Request">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="75.0" layoutY="89.0" text="Monthly Rent:">
+               <font>
+                  <Font name="Nirmala UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Pane fx:id="noPropRented" layoutX="32.0" layoutY="22.0" prefHeight="548.0" prefWidth="719.0" style="-fx-background-color: #F3E9DC;">
+               <children>
+                  <Label layoutX="260.0" layoutY="250.0" prefHeight="48.0" prefWidth="208.0" text="No Property Rented!">
+                     <font>
+                        <Font name="Corbel Bold Italic" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
