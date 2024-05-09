@@ -35,7 +35,7 @@
       </Label>
       <HBox alignment="CENTER" prefHeight="70.0" prefWidth="152.0" spacing="20.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#buyProperty" prefHeight="35.0" prefWidth="59.0" styleClass="listingBtn" stylesheets="@styles.css" text="Buy">
+            <Button fx:id="buyBtn" mnemonicParsing="false" onAction="#buyProperty" prefHeight="35.0" prefWidth="59.0" styleClass="listingBtn" stylesheets="@styles.css" text="Buy">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -43,7 +43,7 @@
                   <Font name="Corbel Bold" size="14.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#rentProperty" prefHeight="35.0" prefWidth="57.0" styleClass="listingBtn" stylesheets="@styles.css" text="Rent">
+            <Button fx:id="rentBtn" mnemonicParsing="false" onAction="#rentProperty" prefHeight="35.0" prefWidth="57.0" styleClass="listingBtn" stylesheets="@styles.css" text="Rent">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.AdminAddPropCont">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="241.0" style="-fx-background-color: DAB49D;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="44.0" layoutY="20.0" prefHeight="35.0" prefWidth="155.0" text="Add Property" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="-1.0" layoutY="97.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="241.0" style="-fx-background-radius: 0 15 0 15; -fx-background-color: #c1835c;" stylesheets="@../styles.css" text="Add Property" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-2.0" layoutY="483.0" mnemonicParsing="false" onAction="#exitAdmin" prefHeight="48.0" prefWidth="209.0" style="-fx-background-color: #4a3728; -fx-background-radius: 0 10 10 0;" text="Exit" textFill="WHITE">
+               <font>
+                  <Font name="Nirmala UI Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="100.0" layoutX="121.0" layoutY="156.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+            <Line endX="100.0" layoutX="121.0" layoutY="91.0" opacity="0.5" startX="-100.0" style="-fx-stroke: C1835C;" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="651.0" prefWidth="783.0" style="-fx-background-color: F3E9DC;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="107.0" layoutY="67.0" prefHeight="200.0" prefWidth="617.0" style="-fx-background-color: #d8bfd8; -fx-background-radius: 0 25 0 25;">
+               <children>
+                  <Label layoutX="253.0" layoutY="18.0" text="Add Properties" textFill="WHITE">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="22.0" layoutY="48.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="103.0" text="Property Type" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="propTypeList" prefWidth="150.0" style="-fx-background-color: white;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="323.0" layoutY="48.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="83.0" text="Enter Price" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="propertyPrice" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="22.0" layoutY="107.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="104.0" text="Enter ZIP Code" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="propZipCode" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="330.0" layoutY="107.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="97.0" text="Enter Purpose" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="propPurpose" prefWidth="150.0" style="-fx-background-color: white;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <Button fx:id="firstSubBtn" layoutX="287.0" layoutY="159.0" mnemonicParsing="false" onAction="#firstSub" text="Submit">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="additionalHouse" layoutX="107.0" layoutY="312.0" prefHeight="200.0" prefWidth="617.0" style="-fx-background-color: #d8bfd8; -fx-background-radius: 0 25 0 25;">
+               <children>
+                  <Label layoutX="220.0" layoutY="22.0" text="Add Additional for House" textFill="WHITE">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="22.0" layoutY="48.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="103.0" text="Housing Capacity" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="houseCap" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="323.0" layoutY="48.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="83.0" text="No. of Floors" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="floorNumb" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="22.0" layoutY="107.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="104.0" text="No. of Rooms" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="roomsNumb" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="330.0" layoutY="107.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="97.0" text="LawnSize" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lawnSize" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <Button layoutX="294.0" layoutY="161.0" mnemonicParsing="false" onAction="#finalSub" text="Submit">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="additionalFlat" layoutX="108.0" layoutY="314.0" prefHeight="200.0" prefWidth="617.0" style="-fx-background-color: #d8bfd8; -fx-background-radius: 0 25 0 25;">
+               <children>
+                  <Label layoutX="220.0" layoutY="22.0" text="Add Additional for Flat" textFill="WHITE">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="24.0" layoutY="74.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="104.0" text="No. of Rooms" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flatRoomsNumb" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="329.0" layoutY="74.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="97.0" text="Flat No." textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flatNo" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <Button layoutX="294.0" layoutY="161.0" mnemonicParsing="false" onAction="#finalSub" text="Submit">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="additionalLand" layoutX="108.0" layoutY="314.0" prefHeight="200.0" prefWidth="617.0" style="-fx-background-color: #d8bfd8; -fx-background-radius: 0 25 0 25;">
+               <children>
+                  <Label layoutX="220.0" layoutY="22.0" text="Add Additional for Land" textFill="WHITE">
+                     <font>
+                        <Font name="Nirmala UI Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="24.0" layoutY="74.0" prefHeight="52.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="104.0" text="Plot Number" textFill="WHITE">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="plotNumber" prefHeight="30.0" prefWidth="149.0" />
+                     </children>
+                  </HBox>
+                  <Button layoutX="294.0" layoutY="161.0" mnemonicParsing="false" onAction="#finalSub" text="Submit">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

@@ -1,13 +1,13 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
@@ -30,6 +30,12 @@ public class SinglePropInfo implements Initializable {
 
     @FXML
     private Label propType;
+    
+    @FXML
+    private Button buyBtn;
+
+    @FXML
+    private Button rentBtn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -42,6 +48,16 @@ public class SinglePropInfo implements Initializable {
       Parent root = loader.load();
       PropertyListingCont controller = loader.getController();
       controller.setCustType(custType);
+    }
+
+    void notiDialog(AlertType type, String title, String header ,String content) {
+      Alert alert = new Alert(type);
+      alert.setTitle(title);
+      alert.setHeaderText(header);
+      alert.setContentText(content);
+      alert.setX(550);
+      alert.setY(300);
+      alert.showAndWait();
     }
 
     @FXML
@@ -82,6 +98,11 @@ public class SinglePropInfo implements Initializable {
           // insertion into subtable
           String subtableInsertion = "INSERT INTO OWNER_T VALUES ('" + custID + "', 09007860123409007860)";
           connection = new DBConnection(subtableInsertion);
+
+          Alert confiProp = new Alert(AlertType.CONFIRMATION);
+          confiProp.setTitle("Property Information");
+          confiProp.setHeaderText("Confirmation Message");
+          confiProp.setContentText("Congratulations on buying the Property. Please Sign in again to view your updated list of Properties");
           try {
             connection.connect();
           } catch (Exception e) {
@@ -92,10 +113,13 @@ public class SinglePropInfo implements Initializable {
           // update property info for exisitng customer
           String queryString = "UPDATE PROPERTY SET PROPERTYSTATUS = 'OWNED',  CUSTOMERID = '" + custID + "' WHERE PROPERTYID = '" + propID + "'";
           DBConnection connection = new DBConnection(queryString);
+
+          notiDialog(AlertType.CONFIRMATION, "Property Information", "Confirmation Message", "Congratulations on buying the Property. Please Sign in again to view your updated list of Properties");
           try {
             connection.connect();
           } catch (Exception e) {
             e.printStackTrace();
+            notiDialog(AlertType.ERROR, "Property Information", "Error Message", "There was an error. Please try again");
           }
         }
       }
@@ -157,6 +181,7 @@ public class SinglePropInfo implements Initializable {
           newTenant.connect();
           custType = "TENANT";
           reValidation(custType);
+          notiDialog(AlertType.CONFIRMATION, "Property Information", "Confirmation Message", "Congratulations on Renting the Property. Please Sign in again to view your updated list of Properties");
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -167,7 +192,8 @@ public class SinglePropInfo implements Initializable {
         DBConnection connection2 = new DBConnection(insertTenant);
         try {
           connection2.connect();
-          custType = "TENANT_OWNER";
+          custType = "OWNER";
+          notiDialog(AlertType.CONFIRMATION, "Property Information", "Confirmation Message", "Congratulations on Renting the Property. Please Sign in again to view your updated list of Properties");
           reValidation(custType);
         } catch (Exception e) {
           e.printStackTrace();
@@ -181,6 +207,12 @@ public class SinglePropInfo implements Initializable {
       propPrice.setText(pData.getPrice());
       propDesc.setText(pData.getDescription());
       propID = pData.getPropID();
+
+      if (pData.getDescription().equals("FOR_RENT")) {
+        buyBtn.setDisable(true);
+      } else if (pData.getDescription().equals("FOR_SALE")) {
+        rentBtn.setDisable(true);
+      }
     }
 
 }

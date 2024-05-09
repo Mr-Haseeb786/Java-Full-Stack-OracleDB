@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -17,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import oracle.sql.DATE;
 
 public class TenantUserController implements Initializable{
 

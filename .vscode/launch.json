@@ -6,6 +6,14 @@
   "configurations": [
     {
       "type": "java",
+      "name": "AdminApp",
+      "request": "launch",
+      "mainClass": "Admin.AdminApp",
+      "projectName": "PropertyManagementSystem_5d077340",
+      "vmArgs": "--module-path E:/Work/Java/JavaFX/openjfx-22_windows-x64_bin-sdk/javafx-sdk-22/lib --add-modules javafx.controls,javafx.fxml"
+    },
+    {
+      "type": "java",
       "name": "Current File",
       "request": "launch",
       "mainClass": "${file}"

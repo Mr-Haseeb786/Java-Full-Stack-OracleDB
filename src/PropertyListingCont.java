@@ -20,7 +20,6 @@ public class PropertyListingCont implements Initializable {
 
   private String custID;
   private String custType;
-
   private Scene scene;
   private Stage stage;
   private Parent root;
@@ -107,7 +106,6 @@ public class PropertyListingCont implements Initializable {
     @FXML
     void switchToPropertiesOwned(ActionEvent event) {
       try {
-        System.out.println("propListing: " + custType);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("OwnerUser.fxml"));
         root = loader.load();
 
