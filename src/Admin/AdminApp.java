@@ -16,8 +16,6 @@ public class AdminApp extends Application{
     Scene sc = new Scene(root);
     // sc.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
     primaryStage.setScene(sc);
-    primaryStage.setX(300);
-    primaryStage.setY(120);
     primaryStage.show();
 
   }

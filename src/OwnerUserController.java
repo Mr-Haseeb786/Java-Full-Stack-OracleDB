@@ -46,8 +46,6 @@ public class OwnerUserController implements Initializable {
     custID = id;
     custType = type;
 
-  System.out.println("ownedFile: " + custType.length());
-
     if (custType == null || custType.contains("TENANT")) {
 
       incomeLabel.setText("0");

@@ -101,7 +101,6 @@ public class SinglePropInfo implements Initializable {
 
           Alert confiProp = new Alert(AlertType.CONFIRMATION);
           confiProp.setTitle("Property Information");
-          confiProp.setHeaderText("Confirmation Message");
           confiProp.setContentText("Congratulations on buying the Property. Please Sign in again to view your updated list of Properties");
           try {
             connection.connect();
@@ -114,7 +113,7 @@ public class SinglePropInfo implements Initializable {
           String queryString = "UPDATE PROPERTY SET PROPERTYSTATUS = 'OWNED',  CUSTOMERID = '" + custID + "' WHERE PROPERTYID = '" + propID + "'";
           DBConnection connection = new DBConnection(queryString);
 
-          notiDialog(AlertType.CONFIRMATION, "Property Information", "Confirmation Message", "Congratulations on buying the Property. Please Sign in again to view your updated list of Properties");
+          notiDialog(AlertType.CONFIRMATION, "Property Information", null, "Congratulations on buying the Property. Please Sign in again to view your updated list of Properties");
           try {
             connection.connect();
           } catch (Exception e) {
@@ -181,7 +180,7 @@ public class SinglePropInfo implements Initializable {
           newTenant.connect();
           custType = "TENANT";
           reValidation(custType);
-          notiDialog(AlertType.CONFIRMATION, "Property Information", "Confirmation Message", "Congratulations on Renting the Property. Please Sign in again to view your updated list of Properties");
+          notiDialog(AlertType.CONFIRMATION, "Property Information", null, "Congratulations on Renting the Property. Please Sign in again to view your updated list of Properties");
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -193,7 +192,7 @@ public class SinglePropInfo implements Initializable {
         try {
           connection2.connect();
           custType = "OWNER";
-          notiDialog(AlertType.CONFIRMATION, "Property Information", "Confirmation Message", "Congratulations on Renting the Property. Please Sign in again to view your updated list of Properties");
+          notiDialog(AlertType.CONFIRMATION, "Property Information", null, "Congratulations on Renting the Property. Please Sign in again to view your updated list of Properties");
           reValidation(custType);
         } catch (Exception e) {
           e.printStackTrace();

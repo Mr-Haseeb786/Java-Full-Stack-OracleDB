@@ -64,7 +64,7 @@ public class AdminAddPropCont implements Initializable {
 
     @FXML
     void exitAdmin(ActionEvent event) {
-
+      System.exit(0);
     }
 
     @FXML
