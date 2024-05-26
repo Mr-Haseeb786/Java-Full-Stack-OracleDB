@@ -4,4 +4,6 @@
 - The Oracle DataBase for this project is hosted on the Machine Locally
 - The Front End was designed using Scene Builder to simplify the Front End Development Process.
 
+> There are some issues with front end rendering of queries that return multiple results
+
 ## End
